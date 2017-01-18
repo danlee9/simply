@@ -5,19 +5,27 @@ app.controller('mainController', ["$http", "$log", "$scope", "recipe_list_data",
     //$log.info("mainController: I am ready to load!");
 
     var self = this;
-    this.cuisine_array = ['french', 'vegan', 'italian', 'japanese']; //array for mg-options
+    this.cuisine_array = ['french', 'vegan', 'italian', 'japanese']; //array for ng-options
     this.cooktime = ['0 - 15 min', '15 - 30 min', '30 - 45 min', '45 - 60 min', '60+ min']; //array for ng-options
 
     self.searchParams = searchParams;
+    self.optionsChosen = false;
 
     this.getSpoonacularData = function () {
         //var self = this;
+        console.log(self.searchParams.style);
+        if ((self.searchParams.style !== '') && (self.searchParams.cookTime !== '')) {
+            if ((self.searchParams.style !== '?') && (self.searchParams.cookTime !== '?')) {
+                self.optionsChosen = true;
+            }
+        }
         recipe_list_data.callSpoonacularData().then(function (data) {
             //$log.log('recipe_list_data.callSpoonacularData(): success, data = ', data);
             //self.spoonacularData = data.results;
             searchParams.SpoonacularData = data.results;
             //$log.log('KYLE spoonacularData: ', searchParams);
         });
+        // $location.path('/recipe-list');
         // console.log("searchInput.style = ", searchParams.style);
         // console.log("searchInput.cookTime = ", searchParams.cookTime);
         // console.log("searchParams service = ", searchParams);

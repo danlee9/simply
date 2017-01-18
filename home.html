@@ -33,12 +33,12 @@
         </div>
         <div class="form-group col-xs-12 col-sm-4 second">
             <label>Choose Cuisine:</label>
-            <select class="form-control"  ng-model="mc.searchParams.style" ng-options="cuisine for cuisine in mc.cuisine_array">
+            <select class="form-control"  ng-model="mc.searchParams.style" ng-options="cuisine for cuisine in mc.cuisine_array" ng-click="mc.getSpoonacularData()">
             </select><br>
-            <label>Cook Time:</label>
+            <label>Choose Cook Time:</label>
             <select class="form-control" ng-model="mc.searchParams.cookTime" ng-options="cooktime for cooktime in mc.cooktime" ng-click="mc.getSpoonacularData()">
             </select><br>
-            <a href="#recipe-list"><button class="btn btn-success">Search</button></a>
+            <a href="#recipe-list" ng-class="{'inactive': !mc.optionsChosen}"><button class="btn btn-success">Search</button></a>
         </div>
     </div>
 </body>
