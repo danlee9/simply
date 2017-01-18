@@ -70,6 +70,7 @@ app.controller('mainController', ["$http", "$log", "$scope", "recipe_list_data",
 
     //tied to click handler to reset search params when returning to the home page
     this.resetSearchParams = function(){
+        self.optionsChosen = false;
         searchParams.style = "";
         searchParams.cookTime = "";
         searchParams.SpoonacularData = [];
