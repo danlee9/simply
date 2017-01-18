@@ -1,0 +1,62 @@
+body{
+    background-image: url('images/img-md/pexels-photo-86753.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    padding-top: 15vh;
+    height: 100vh;
+}
+body.new-font{
+    font-family: 'Playfair Display', serif;
+}
+div.container-fluid{
+    padding-left: 50px;
+}
+nav.navbar{
+    margin: 0;
+    margin-bottom: 5vh;
+    box-shadow: 3px 3px 5px black;
+}
+h1.white-text{
+    text-indent: 65px;
+}
+.white-text {
+	color: white;
+}
+div.container-fluid.override{
+    margin: 0;
+    padding: 0;
+    padding-top: 10vh;
+}
+div.first, div.second{
+    color: black;
+    padding-top: 10px;
+    font-size: 1.3em;
+}
+div.first.jumbotron{
+    padding: 10px;
+    background-color: rgba(255,255,255, 0.7);
+}
+div.first.jumbotron h1{
+    margin-top: 0;
+}
+div.second label{
+    background-color: rgba(255,255,255, 0.7);
+    border-radius: 10px;
+    padding: 5px;
+}
+@media screen and (max-width: 767px){
+    body{
+        background-repeat: repeat-y;
+        padding-top: 20vh;
+    }
+    nav div h1{
+        margin: 5px 0;
+    }
+    nav div.navbar-brand{
+        padding: 8px 15px;
+    }
+}
+
