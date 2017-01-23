@@ -1,60 +1,26 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="recipeApp">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <title>Recipe List</title>
-    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
-    <link href="stylesheets/list_style.css" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-</head>
-<body ng-controller="mainController as mc" class="override">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="col-xs-12 col-sm-4 col-sm-push-4">
-                <h1 class="white-text">Simply Cook</h1>
-            </div>
-            <div class="col-sm-2 col-sm-pull-4">
-                <div class="navbar-brand"><a href="#/" ng-click="mc.resetSearchParams()"><i class="fa fa-home fa-2x white-text" aria-hidden="true"></i></a></div>
-                <div class="navbar-brand"><a href="#/" ng-click="mc.resetSearchParams()"><i class="fa fa-arrow-left fa-2x white-text" aria-hidden="true"></i></a></div>
-            </div>
-<!--             <div class="col-sm-2 navbar-right">
-                <div class="navbar-brand"><i class="fa fa-facebook fa-2x white-text" aria-hidden="true"></i></div>
-                <div class="navbar-brand"><i class="fa fa-pinterest fa-2x white-text" aria-hidden="true"></i></div>
-            </div> -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="col-xs-12 col-sm-4 col-sm-push-4">
+            <h1 class="white-text">Simply Cook</h1>
         </div>
-    </nav>
-    <div class="col-xs-12 col-sm-5 col-sm-push-1 list-item" ng-repeat="x in mc.searchParams.sortedData" ng-click="mc.getRecipeInstructions($index)">
-        <div class="panel panel-default text-center" title="{{x.title}}">
-            <a href="#recipe">
-                <h3 class="text-center panel-heading list-item-description">{{x.title | listItemFilter}}</h3>
-                <div class="panel-body">
-                    <img class="list-image" ng-src="http://spoonacular.com/recipeImages/{{x.image}}">
-                </div>
-                <div class="text-center panel-footer">
-                    <h5>Ready in</h5>
-                    <div class="recipe-border"><span class="recipe-time">{{x.readyInMinutes}}</span></div>
-                    <h5>minutes</h5>
-                </div>
-            </a>
+        <div class="col-sm-2 col-sm-pull-4">
+            <div class="navbar-brand"><a href="#/" ng-click="mc.resetSearchParams()"><i class="fa fa-home fa-2x white-text" aria-hidden="true"></i></a></div>
+            <div class="navbar-brand"><a href="#/" ng-click="mc.resetSearchParams()"><i class="fa fa-arrow-left fa-2x white-text" aria-hidden="true"></i></a></div>
         </div>
     </div>
-<!--     <div class="grid">
-        <div class="grid-item" ng-repeat="x in mc.searchParams.sortedData" ng-click="mc.getRecipeInstructions($index)">
-            <div class="panel panel-default text-center">
-                <a href="#recipe">
-                    <h3 class="text-center panel-heading">{{x.title}}</h3>
-                    <img class="img-responsive panel-body" ng-src="http://spoonacular.com/recipeImages/{{x.image}}">
-                    <div class="text-center panel-footer">
-                        <h5>Ready in</h5>
-                        <div class="recipe-border"><span class="recipe-time">{{x.readyInMinutes}}</span></div>
-                        <h5>minutes</h5>
-                    </div>
-                </a>
+</nav>
+<div class="col-xs-12 col-sm-5 col-sm-push-1 list-item" ng-repeat="x in mc.searchParams.sortedData" ng-click="mc.getRecipeInstructions($index)">
+    <div class="panel panel-default text-center" title="{{x.title}}">
+        <a href="#recipe">
+            <h3 class="text-center panel-heading list-item-description">{{x.title | listItemFilter}}</h3>
+            <div class="panel-body">
+                <img class="list-image" ng-src="http://spoonacular.com/recipeImages/{{x.image}}">
             </div>
-        </div>
-    </div> -->
-</body>
-</html>
+            <div class="text-center panel-footer">
+                <h5>Ready in</h5>
+                <div class="recipe-border"><span class="recipe-time">{{x.readyInMinutes}}</span></div>
+                <h5>minutes</h5>
+            </div>
+        </a>
+    </div>
+</div>
