@@ -3,6 +3,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     padding-top: 15vh;
@@ -50,6 +51,15 @@ div.second label{
 .inactive {
     pointer-events: none;
     opacity: 0.5;
+}
+.list-item-description {
+    height: 40px;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+}
+.list-image {
+    height: 400px;
+    max-width: 550px;
 }
 @media screen and (max-width: 767px){
     body{
