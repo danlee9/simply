@@ -26,6 +26,13 @@ h1.white-text{
 .white-text {
 	color: white;
 }
+.nav-buttons {
+    position: relative;
+    top: 18px;
+}
+.nav-buttons i {
+    margin-right: 2px;
+}
 div.container-fluid.override{
     margin: 0;
     padding: 0;
@@ -56,10 +63,11 @@ div.second label{
     height: 40px;
     margin-bottom: 0;
     padding-bottom: 5px;
+    overflow-y: hidden;
 }
 .list-image {
     height: 400px;
-    max-width: 550px;
+    max-width: 90%;
 }
 
 
@@ -123,6 +131,19 @@ div.panel-primary h4{
     text-shadow: 2px 2px black;
 }
 
+@media screen and (max-width: 1390px){
+    .list-image {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 1090px){
+    .list-image {
+        height: 250px;
+    }
+}
+
+
 @media screen and (max-width: 767px){
     body{
         background-repeat: repeat-y;
@@ -133,6 +154,12 @@ div.panel-primary h4{
     }
     nav div.navbar-brand{
         padding: 8px 15px;
+    }
+    .nav-buttons {
+        top: 3px;
+    }
+    .list-image {
+        height: 350px;
     }
 }
 
